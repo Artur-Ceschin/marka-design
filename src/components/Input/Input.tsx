@@ -39,7 +39,7 @@ export function Input({
       <div className="relative flex items-center">
         {/* Left icon */}
         {icon && (
-          <span className="absolute left-3 flex items-center text-text-ash pointer-events-none">
+          <span className="absolute left-3.5 flex items-center text-text-ash pointer-events-none">
             {icon}
           </span>
         )}
@@ -49,12 +49,10 @@ export function Input({
             // Base
             'w-full h-12 font-body text-[13px] text-text-charcoal',
             'bg-bg-linen placeholder:text-text-ash',
-            'border transition-all duration-150 outline-none',
-            // Radius
+            'border-[1.5px] transition-all duration-150 outline-none',
             pill ? 'rounded-full px-4' : 'rounded-md px-4',
-            // Icon padding
-            icon     && 'pl-9',
-            iconRight && 'pr-9',
+            icon      && 'pl-10',
+            iconRight && 'pr-10',
             // State borders
             hasError
               ? 'border-berry/80 bg-berry-pale/30 focus:border-berry focus:ring-1 focus:ring-berry/20'
@@ -70,7 +68,7 @@ export function Input({
 
         {/* Right icon */}
         {iconRight && (
-          <span className="absolute right-3 flex items-center text-text-ash pointer-events-none">
+          <span className="absolute right-3.5 flex items-center text-text-ash pointer-events-none">
             {iconRight}
           </span>
         )}
@@ -127,7 +125,7 @@ export function Textarea({
             'w-full min-h-[88px] px-4 py-3',
             'font-body text-[13px] text-text-charcoal',
             'bg-bg-linen placeholder:text-text-ash',
-            'border rounded-md resize-none',
+            'border-[1.5px] rounded-md resize-none',
             'transition-all duration-150 outline-none',
             hasError
               ? 'border-berry/80 focus:border-berry focus:ring-1 focus:ring-berry/20'

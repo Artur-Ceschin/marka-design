@@ -22,8 +22,8 @@ const variantStyles: Record<TagVariant, string> = {
 }
 
 const sizeStyles: Record<TagSize, string> = {
-  md: 'px-[10px] py-[4px] text-[10px]',
-  sm: 'px-[8px]  py-[3px] text-[9px]',
+  md: 'px-[10px] py-[4px] text-[10px] tracking-[0.15em]',
+  sm: 'px-[8px]  py-[3px] text-[9px]  tracking-[0.15em]',
 }
 
 const dotColors: Record<TagVariant, string> = {
@@ -47,7 +47,7 @@ export function Tag({
       role={onClick ? 'button' : undefined}
       onClick={onClick}
       className={clsx(
-        'inline-flex items-center gap-1.5 rounded-full font-mono tracking-widest uppercase',
+        'inline-flex items-center gap-1.5 rounded-full font-mono uppercase',
         'transition-all duration-150',
         onClick && 'cursor-pointer hover:opacity-80',
         variantStyles[variant],

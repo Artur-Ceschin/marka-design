@@ -42,10 +42,12 @@ export function FindCard({
             <div className="w-10 h-10 rounded-full bg-white/25" />
           </div>
         )}
+        {/* Gradient fade into card body */}
+        <div className="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-bg-linen to-transparent pointer-events-none" />
       </div>
 
       {/* Content */}
-      <div className="p-[10px] pt-2">
+      <div className="px-[10px] pb-[10px] pt-1">
         <p className="font-display font-semibold text-[12px] text-text-charcoal leading-tight line-clamp-2">
           {name}
         </p>
@@ -85,7 +87,7 @@ export function FeaturedCard({
       onClick={onClick}
       style={{ backgroundColor: bgColor }}
       className={clsx(
-        'relative rounded-lg overflow-hidden shadow-md',
+        'relative w-full h-[200px] rounded-lg overflow-hidden shadow-md',
         'transition-all duration-200',
         onClick && 'cursor-pointer hover:shadow-lg hover:-translate-y-0.5',
         className,
@@ -107,21 +109,20 @@ export function FeaturedCard({
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 p-5 pt-24">
-        {/* Tags */}
+      {/* Content — pinned to bottom */}
+      <div className="absolute inset-x-0 bottom-0 p-5">
         <div className="flex flex-wrap gap-1.5 mb-2">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex px-2.5 py-1 rounded-full font-mono text-[8px] tracking-widest uppercase text-white/90 bg-white/15 border border-white/20"
+              className="inline-flex items-center px-2.5 py-[3px] rounded-full font-mono text-[8px] tracking-[0.15em] uppercase text-white/90 bg-white/15 border border-white/20"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <h3 className="font-display font-semibold text-[21px] text-text-white leading-tight">
+        <h3 className="font-display font-semibold text-[20px] text-text-white leading-tight">
           {name}
         </h3>
         <p className="font-display italic text-[11px] text-white/55 mt-1">
@@ -178,11 +179,11 @@ export function PlantResultCard({
         {imageUrl ? (
           <img src={imageUrl} alt={name} className="w-full h-full object-cover" />
         ) : (
-          <>
-            <div className="absolute top-[-10%] right-[10%] w-[50%] aspect-square rounded-full bg-white/10" />
-            <div className="absolute bottom-0 left-0 right-0 h-[60px] bg-gradient-to-t from-bg-birch to-transparent" />
-          </>
+          /* Decorative circle — top-right */
+          <div className="absolute top-4 right-4 w-[45%] aspect-square rounded-full bg-white/10" />
         )}
+        {/* Gradient fade into card bg */}
+        <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-bg-birch to-transparent pointer-events-none" />
       </div>
 
       {/* Content */}
@@ -262,7 +263,7 @@ export function NotebookStrip({
       onClick={onClick}
       className={clsx(
         'flex items-center gap-3 px-3 py-3 rounded-md',
-        'bg-amber-pale border border-amber/20',
+        'bg-amber-pale border-[1.5px] border-amber/20',
         onClick && 'cursor-pointer hover:shadow-sm transition-all duration-150',
         className,
       )}

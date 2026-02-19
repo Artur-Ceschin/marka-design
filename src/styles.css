@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── BASE ──────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    /* Backgrounds */
+    --color-bg-birch: #F5F0E8;
+    --color-bg-linen: #EDE7D9;
+    --color-bg-fog:   #E2DDD4;
+    --color-bg-bark:  #D4CCC0;
+
+    /* Green */
+    --color-green-moss:  #4A6741;
+    --color-green-sage:  #7A9E73;
+    --color-green-pale:  #C8D9C4;
+    --color-green-mist:  #EBF2EA;
+
+    /* Amber */
+    --color-amber:      #C97B3A;
+    --color-amber-pale: #F5E6D3;
+
+    /* Berry */
+    --color-berry:      #8B4F6B;
+    --color-berry-pale: #F0E4EB;
+
+    /* Text */
+    --color-text-charcoal: #2C2C2C;
+    --color-text-stone:    #6B6560;
+    --color-text-ash:      #9E9992;
+    --color-text-white:    #FAF8F4;
+
+    /* Dark */
+    --color-dark-forest: #1A1F16;
+    --color-dark-bark:   #1A1A18;
+
+    /* Shadows */
+    --shadow-sm:         0 2px 8px rgba(44,40,35,0.08);
+    --shadow-md:         0 6px 24px rgba(44,40,35,0.12);
+    --shadow-lg:         0 16px 48px rgba(44,40,35,0.18);
+    --shadow-green-glow: 0 4px 16px rgba(74,103,65,0.45);
+
+    /* Radii */
+    --radius-sm:   8px;
+    --radius-md:   16px;
+    --radius-lg:   24px;
+    --radius-xl:   32px;
+    --radius-full: 9999px;
+
+    /* Spacing */
+    --space-1:  4px;
+    --space-2:  8px;
+    --space-3:  12px;
+    --space-4:  16px;
+    --space-5:  20px;
+    --space-6:  24px;
+    --space-8:  32px;
+    --space-10: 40px;
+    --space-12: 48px;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-bg-birch);
+    color: var(--color-text-charcoal);
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+}
+
+/* ── COMPONENTS ────────────────────────────────────────────────── */
+@layer components {
+  /* Typography shorthands */
+  .text-display    { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 600; }
+  .text-heading-xl { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; }
+  .text-heading-lg { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; }
+  .text-heading-md { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; }
+  .text-latin      { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; }
+  .text-body-lg    { font-family: 'DM Sans', sans-serif; font-size: 15px; }
+  .text-body       { font-family: 'DM Sans', sans-serif; font-size: 13px; }
+  .text-body-sm    { font-family: 'DM Sans', sans-serif; font-size: 11px; }
+  .text-label      { font-family: 'Courier Prime', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .text-label-sm   { font-family: 'Courier Prime', monospace; font-size: 9px;  letter-spacing: 0.15em; text-transform: uppercase; }
+  .text-caption    { font-family: 'Courier Prime', monospace; font-size: 8px;  letter-spacing: 0.1em; }
+}

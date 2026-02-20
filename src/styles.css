@@ -62,6 +62,13 @@
     --space-12: 48px;
   }
 
+  /* Global focus ring — 2px solid green-moss, 2px offset */
+  :focus-visible {
+    outline: 2px solid #4A6741;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

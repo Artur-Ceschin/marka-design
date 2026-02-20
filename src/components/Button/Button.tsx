@@ -1,5 +1,6 @@
 import React from 'react'
 import { clsx } from 'clsx'
+import { Slot } from '@radix-ui/react-slot'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'amber' | 'danger' | 'subtle'
 export type ButtonSize    = 'xl' | 'lg' | 'md' | 'sm' | 'xs'
@@ -11,6 +12,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   icon?:      React.ReactNode
   iconRight?: React.ReactNode
   fullWidth?: boolean
+  asChild?:   boolean         // renders children as root element (e.g. <a>, next/link)
 }
 
 // ── Variant styles ────────────────────────────────────────────────
@@ -52,34 +54,49 @@ export function Button({
   icon,
   iconRight,
   fullWidth = false,
+  asChild   = false,
   disabled,
   children,
   className,
   ...props
 }: ButtonProps) {
+  const baseClassName = clsx(
+    fullWidth ? 'flex' : 'inline-flex',
+    'items-center justify-center',
+    'relative',
+    'rounded-full',
+    'font-body',
+    'select-none whitespace-nowrap',
+    'transition-all duration-150',
+    'cursor-pointer',
+    'focus:outline-none',
+    'focus-visible:ring-2 focus-visible:ring-green-moss focus-visible:ring-offset-2',
+    'disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:pointer-events-none',
+    variantStyles[variant],
+    sizeStyles[size],
+    fullWidth && 'w-full',
+    className,
+  )
+
+  // asChild: merge styles onto the child element (e.g. <a>, next/link)
+  // Icon and spinner are omitted — child provides its own content
+  if (asChild) {
+    return (
+      <Slot
+        aria-busy={loading || undefined}
+        className={baseClassName}
+        {...props}
+      >
+        {children}
+      </Slot>
+    )
+  }
+
   return (
     <button
       disabled={disabled || loading}
-      className={clsx(
-        // Layout — flex (block) when fullWidth, inline-flex otherwise
-        fullWidth ? 'flex' : 'inline-flex',
-        'items-center justify-center',
-        'relative',           // needed for absolutely-positioned spinner
-        'rounded-full',
-        'font-body',          // DM Sans
-        'select-none whitespace-nowrap',
-        'transition-all duration-150',
-        'cursor-pointer',
-        // Focus ring — 2px solid green-moss, 2px offset
-        'focus:outline-none',
-        'focus-visible:ring-2 focus-visible:ring-green-moss focus-visible:ring-offset-2',
-        // Disabled: dim, no shadow, no pointer events
-        'disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none disabled:pointer-events-none',
-        variantStyles[variant],
-        sizeStyles[size],
-        fullWidth && 'w-full',
-        className,
-      )}
+      aria-busy={loading || undefined}
+      className={baseClassName}
       {...props}
     >
       <span

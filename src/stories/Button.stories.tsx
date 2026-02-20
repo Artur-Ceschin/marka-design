@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '../components/Button'
 
-// ── Inline SVG icons (stroke-based, 16×16, strokeWidth 1.5) ──────
-
 const LeafIcon = () => (
   <svg
     width="16"
@@ -33,8 +31,6 @@ const ArrowRightIcon = () => (
     <path d="M3 8h10M9 4l4 4-4 4" />
   </svg>
 )
-
-// ── Meta ──────────────────────────────────────────────────────────
 
 const meta: Meta<typeof Button> = {
   title:     'Marka/Button',
@@ -71,8 +67,6 @@ export default meta
 
 type Story = StoryObj<typeof Button>
 
-// ── 1–6: Single variant stories ───────────────────────────────────
-
 export const Primary: Story = {
   args: { variant: 'primary', size: 'lg', children: 'Save plant' },
 }
@@ -97,19 +91,14 @@ export const Subtle: Story = {
   args: { variant: 'subtle', size: 'lg', children: 'Skip' },
 }
 
-// ── 7: Loading ────────────────────────────────────────────────────
-
 export const Loading: Story = {
   args: { variant: 'primary', size: 'lg', loading: true, children: 'Identifying…' },
 }
-
-// ── 8: Disabled ───────────────────────────────────────────────────
 
 export const Disabled: Story = {
   args: { variant: 'primary', size: 'lg', disabled: true, children: 'Save plant' },
 }
 
-// ── 9: Full width ─────────────────────────────────────────────────
 
 export const FullWidth: Story = {
   args: { variant: 'primary', size: 'xl', fullWidth: true, children: 'Identify plant' },
@@ -143,9 +132,6 @@ export const WithIconRight: Story = {
     iconRight: <ArrowRightIcon />,
   },
 }
-
-// ── 12: All variants ──────────────────────────────────────────────
-// Card with inline Courier Prime labels showing variant name
 
 const VARIANTS = [
   { variant: 'primary',   label: 'Save plant',   name: 'primary'   },
@@ -199,8 +185,38 @@ export const AllVariants: Story = {
     </div>
   ),
 }
+export const AsChild: Story = {
+  name: 'AsChild (renders as <a>)',
+  render: () => (
+    <div className="flex flex-col gap-3 items-start p-6 bg-bg-birch rounded-lg">
+      <p
+        style={{
+          fontFamily: "'Courier Prime', monospace",
+          fontSize: 8,
+          letterSpacing: '0.15em',
+          textTransform: 'uppercase',
+          color: '#9E9992',
+          marginBottom: 8,
+        }}
+      >
+        asChild — merges styles onto child element
+      </p>
 
-// ── 13: All sizes ─────────────────────────────────────────────────
+      <Button asChild variant="primary" size="lg">
+        <a href="#explore">Explore plants</a>
+      </Button>
+
+      <Button asChild variant="secondary" size="md">
+        <a href="#journal">Open journal</a>
+      </Button>
+
+      <Button asChild variant="ghost" size="sm">
+        <a href="#back">← Go back</a>
+      </Button>
+    </div>
+  ),
+}
+
 
 const SIZES = [
   { size: 'xl', label: 'Extra Large', hint: 'h-52px · semibold 15px'         },

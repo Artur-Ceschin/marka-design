@@ -6,6 +6,6 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   clean: true,
-  external: ['react', 'react-dom', '@marka/tokens'],
+  external: ['react', 'react-dom', '@marka-app/tokens'],
   injectStyle: false,
 })

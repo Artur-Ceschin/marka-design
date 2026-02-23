@@ -1,5 +1,5 @@
 /**
- * Re-export all tokens from @marka/tokens.
+ * Re-export all tokens from @marka-app/tokens.
  * This keeps backward compatibility for existing consumers of @marka/ui
  * that import tokens from '@marka/ui'.
  */
@@ -12,7 +12,7 @@ export {
   radius,
   shadows,
   borderWidth,
-} from '@marka/tokens'
+} from '@marka-app/tokens'
 
 export type {
   Colors,
@@ -20,4 +20,4 @@ export type {
   Spacing,
   Radius,
   Shadows,
-} from '@marka/tokens'
+} from '@marka-app/tokens'

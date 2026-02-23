@@ -15,7 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "paths": {
-      "@marka/tokens": ["./src/tokens/index.ts"]
+      "@marka-app/tokens": ["./src/tokens/index.ts"]
     }
   },
   "include": ["src"],

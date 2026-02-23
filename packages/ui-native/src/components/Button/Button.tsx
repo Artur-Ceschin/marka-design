@@ -9,7 +9,7 @@ import {
   type TextStyle,
   type PressableProps,
 } from 'react-native'
-import { theme } from '@marka/tokens/native'
+import { theme } from '@marka-app/tokens/native'
 
 const { colors, spacing, fonts, shadows } = theme
 

@@ -35,7 +35,7 @@ importers:
 
   packages/ui:
     dependencies:
-      '@marka/tokens':
+      '@marka-app/tokens':
         specifier: workspace:*
         version: link:../tokens
       '@radix-ui/react-dialog':
@@ -156,7 +156,7 @@ importers:
 
   packages/ui-native:
     dependencies:
-      '@marka/tokens':
+      '@marka-app/tokens':
         specifier: workspace:*
         version: link:../tokens
       react:

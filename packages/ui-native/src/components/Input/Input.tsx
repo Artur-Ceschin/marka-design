@@ -7,7 +7,7 @@ import {
   type ViewStyle,
   type TextInputProps,
 } from 'react-native'
-import { theme } from '@marka/tokens/native'
+import { theme } from '@marka-app/tokens/native'
 
 const { colors, fonts, spacing } = theme
 

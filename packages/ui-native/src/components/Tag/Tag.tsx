@@ -1,6 +1,6 @@
 import React from 'react'
 import { Pressable, Text, View, StyleSheet, type ViewStyle, type TextStyle } from 'react-native'
-import { theme } from '@marka/tokens/native'
+import { theme } from '@marka-app/tokens/native'
 
 const { colors, fonts } = theme
 

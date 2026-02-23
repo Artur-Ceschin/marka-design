@@ -1,5 +1,5 @@
 {
-  "name": "@marka/tokens",
+  "name": "@marka-app/tokens",
   "version": "0.1.0",
   "description": "Marka Design System — platform-agnostic design tokens",
   "main": "dist/index.js",
@@ -31,7 +31,8 @@
   },
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.19",

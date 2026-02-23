@@ -8,7 +8,7 @@ import {
   type ViewStyle,
   type ImageSourcePropType,
 } from 'react-native'
-import { theme } from '@marka/tokens/native'
+import { theme } from '@marka-app/tokens/native'
 
 const { colors, fonts, spacing, shadows, radius } = theme
 

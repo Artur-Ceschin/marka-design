@@ -13,5 +13,5 @@ export type { InputProps } from './components/Input'
 export type { FindCardProps, FeaturedCardProps } from './components/Card'
 
 // Re-export theme for convenience
-export { theme } from '@marka/tokens/native'
-export type { Theme } from '@marka/tokens/native'
+export { theme } from '@marka-app/tokens/native'
+export type { Theme } from '@marka-app/tokens/native'

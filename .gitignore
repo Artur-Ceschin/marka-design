@@ -7,3 +7,9 @@ packages/*/package-lock.json
 
 # OS
 .DS_Store
+
+# IDE / AI agents
+.cursor
+.claude
+.env
+.env.local
